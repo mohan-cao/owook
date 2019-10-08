@@ -49,7 +49,7 @@ function decode(_0v0qwqxnx0v0k) {
             if (OwOinio3oo3o7w7UvU9o9k[omoqwq0v00v0qwqunuk]) {
                 iniUvUUnU0w0qwqunuk += OwOinio3oo3o7w7UvU9o9k[omoqwq0v00v0qwqunuk]
             } else {
-                iniUvUUnU0w0qwqunuk += "?"
+                iniUvUUnU0w0qwqunuk += omoqwq0v00v0qwqunuk.charAt(0)
             }
         }
         unuqwq0v00V0unuUvU0W0iniomo0V0qwqk += iniUvUUnU0w0qwqunuk + " "
@@ -82,7 +82,7 @@ function encode(_0v0qwqxnx0v0k) {
             if (unuqwq0W0qwqunuUnUqwqOwOinio3oo3o7w7UvU9o9k[omoqwq0v00v0qwqunuk]) {
                 iniUvUUnU0w0qwqunuk += unuqwq0W0qwqunuUnUqwqOwOinio3oo3o7w7UvU9o9k[omoqwq0v00v0qwqunuk]
             } else {
-                iniUvUUnU0w0qwqunuk += omoqwq0v00v0qwqunuk
+                iniUvUUnU0w0qwqunuk += omoqwq0v00v0qwqunuk + "" + omoqwq0v00v0qwqunuk + "" + omoqwq0v00v0qwqunuk
             }
         }
         unuqwq0v00V0unuUvU0W0iniomo0V0qwqk += iniUvUUnU0w0qwqunuk + "k" + " "
