@@ -1,40 +1,40 @@
 const mapping = {
-    "OOOOO": "0",
-    "oOOOO": "1",
-    "ooOOO": "2",
-    "oooOO": "3",
-    "ooooO": "4",
-    "ooooo": "5",
-    "Ooooo": "6",
-    "OOooo": "7",
-    "OOOoo": "8",
-    "OOOOo": "9",
-    "oO": "a",
-    "Oooo": "b",
-    "OoOo": "c",
-    "Ooo": "d",
-    "o": "e",
-    "ooOo": "f",
-    "OOo": "g",
-    "oooo": "h",
-    "oo": "i",
-    "oOOO": "j",
-    "OoO": "k",
-    "oOoo": "l",
-    "OO": "m",
-    "Oo": "n",
-    "OOO": "o",
-    "oOOo": "p",
-    "OOoO": "q",
-    "oOo": "r",
-    "ooo": "s",
-    "O": "t",
-    "ooO": "u",
-    "oooO": "v",
-    "oOO": "w",
-    "OooO": "x",
-    "OoOO": "y",
-    "OOoo": "z",
+    "owo": "0",
+    "OWO": "1",
+    "owO": "2",
+    "O3O": "3",
+    "uvu": "4",
+    "u3u": "5",
+    "OvO": "6",
+    "uwu": "7",
+    "ono": "8",
+    "n3n": "9",
+    "ini": "a",
+    "9w9": "b",
+    "oco": "c",
+    "ouo": "d",
+    "qwq": "e",
+    "oAo": "f",
+    "9o9": "g",
+    "OoO": "h",
+    "7w7": "i",
+    "xDD": "j",
+    "x33": "k",
+    "omo": "l",
+    "OwO": "m",
+    "UvU": "n",
+    "OnO": "o",
+    "o3o": "p",
+    "n3n": "q",
+    "unu": "r",
+    "UnU": "s",
+    "0v0": "t",
+    "0V0": "u",
+    "0W0": "v",
+    "0w0": "w",
+    "xnx": "x",
+    "xvx": "y",
+    "xwx": "z",
 };
 
 function decode(text) {
@@ -42,7 +42,7 @@ function decode(text) {
     let words = text.split(" ");
     for (word of words) {
         word = word.replace("k", "");
-        let letters = word.split("0").filter(l => l != "");
+        let letters = word.match(/.{1,3}/g).filter(l => l != "");
 
         let answer = "";
         for (letter of letters) {
@@ -84,7 +84,6 @@ function encode(text) {
             } else {
                 answer += letter
             }
-            answer += "0"
         }
         returnValue += answer + "k" + " "
     }
