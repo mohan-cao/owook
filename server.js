@@ -1,74 +1,75 @@
-const { encode, decode } = require('./ook.js')
-const fs = require('fs');
-const express = require('express')
-const app = express()
+const qwqUvUocoOnOouoqwqk = require('./ook.js').encode;
+const ouoqwqocoOnOouoqwqk = require('./ook.js').decode;
+const oAoUnUk = require('fs');
+const qwqxnxo3ounuqwqUnUUnUk = require('express')
+const inio3oo3ok = qwqxnxo3ounuqwqUnUUnUk()
 
-app.use(express.urlencoded({ extended: true}));
+inio3oo3ok.use(qwqxnxo3ounuqwqUnUUnUk.urlencoded({ extended: true}));
 
 
-app.get('/', function (req, res) {
-    data = fs.readFileSync('./main.html', 'utf8')
-    res.send(data.replace("TEST_STRING", ""))
+inio3oo3ok.get('/', function (unuqwqn3nk, unuqwqUnUk) {
+    data = oAoUnUk.readFileSync('./main.html', 'utf8')
+    unuqwqUnUk.send(data.replace("TEST_STRING", ""))
 })
 
-const masterPassword = [ "ooook" ]
+const OwOiniUnU0v0qwqunuo3oiniUnUUnU0w0OnOunuouok = [ "OnOOnOOnOOnOx33k" ]
 
-let accounts = []
+let iniocoocoOnO0V0UvU0v0UnUk = []
 
 
-app.post('/', async function (req, res) {
-    data = fs.readFileSync('./main.html', 'utf8')
+inio3oo3ok.post('/', async function (unuqwqn3nk, unuqwqUnUk) {
+    data = oAoUnUk.readFileSync('./main.html', 'utf8')
 
-    const answerString = req.body.mode === "decode" ? decode(req.body.text) : encode(req.body.text);
+    const iniUvUUnU0w0qwqunuUnU0v0unu7w7UvU9o9k = unuqwqn3nk.body.mode === "decode" ? ouoqwqocoOnOouoqwqk(unuqwqn3nk.body.text) : qwqUvUocoOnOouoqwqk(unuqwqn3nk.body.text);
 
-    const pass = req.body.password;
+    const o3oiniUnUUnUk = unuqwqn3nk.body.password;
 
-    let sent = false;
+    let UnUqwqUvU0v0k = false;
 
-    if (masterPassword.includes(req.body.password)) {
-        res.send(data.replace("TEST_STRING", answerString))
-        sent = true;
+    if (OwOiniUnU0v0qwqunuo3oiniUnUUnU0w0OnOunuouok.includes(unuqwqn3nk.body.password)) {
+        unuqwqUnUk.send(data.replace("TEST_STRING", iniUvUUnU0w0qwqunuUnU0v0unu7w7UvU9o9k))
+        UnUqwqUvU0v0k = true;
     } else {
-        const account = accounts.find(a => a.pass == pass);
-        if (account) {
+        const iniocoocoOnO0V0UvU0v0k = iniocoocoOnO0V0UvU0v0UnUk.find(a => a.pass == o3oiniUnUUnUk);
+        if (iniocoocoOnO0V0UvU0v0k) {
 
-            const time = Date.now() / 1000;
-            if (account.expiry > time && (account.used > 0 || account.used < 0)) {
+            const _0v07w7OwOqwqk = Date.now() / 1000;
+            if (iniocoocoOnO0V0UvU0v0k.expiry > _0v07w7OwOqwqk && (iniocoocoOnO0V0UvU0v0k.used > 0 || iniocoocoOnO0V0UvU0v0k.used < 0)) {
 
-                account.used = account.used - 1;
+                iniocoocoOnO0V0UvU0v0k.used = iniocoocoOnO0V0UvU0v0k.used - 1;
 
-                res.send(data.replace("TEST_STRING", answerString))
-                sent = true;
+                unuqwqUnUk.send(data.replace("TEST_STRING", iniUvUUnU0w0qwqunuUnU0v0unu7w7UvU9o9k))
+                UnUqwqUvU0v0k = true;
             }
         }
     }
 
-    if (!sent) {
-        res.send(data.replace("TEST_STRING", "Wrong Password"))
+    if (!UnUqwqUvU0v0k) {
+        unuqwqUnUk.send(data.replace("TEST_STRING", "Wrong Password"))
     }
 })
 
-//password
-//pass
-//time
-//number
-app.post('/create', async function (req, res) {
-    const pass = req.body.password;
+//o3oiniUnUUnU0w0OnOunuouok
+//o3oiniUnUUnUk
+//0v07w7OwOqwqk
+//UvU0V0OwO9w9qwqunuk
+inio3oo3ok.post('/create', async function (req, res) {
+    const o3oiniUnUUnUk = req.body.password;
 
-    if (masterPassword.includes(req.body.password)) {
-        const account = accounts.find(a => a.pass == pass);
-        const time = Date.now() / 1000 + (60 * req.body.time);
+    if (OwOiniUnU0v0qwqunuo3oiniUnUUnU0w0OnOunuouok.includes(req.body.password)) {
+        const iniocoocoOnO0V0UvU0v0k = iniocoocoOnO0V0UvU0v0UnUk.find(a => a.pass == o3oiniUnUUnUk);
+        const _0v07w7OwOqwqk = Date.now() / 1000 + (60 * req.body.time);
 
-        if (!account) {
-            accounts.push({ 'pass': req.body.pass, 'expiry': time, 'used': req.body.number})
+        if (!iniocoocoOnO0V0UvU0v0k) {
+            iniocoocoOnO0V0UvU0v0UnUk.push({ 'pass': req.body.pass, 'expiry': _0v07w7OwOqwqk, 'used': req.body.number})
         } else {
-            account.pass = req.body.pass;
-            account.expiry = req.body.time;
-            account.used = req.body.number;
+            iniocoocoOnO0V0UvU0v0k.pass = req.body.pass;
+            iniocoocoOnO0V0UvU0v0k.expiry = req.body.time;
+            iniocoocoOnO0V0UvU0v0k.used = req.body.number;
         }
     }
     res.send("done")
 })
 
 
-app.listen(3000)
+inio3oo3ok.listen(3000)

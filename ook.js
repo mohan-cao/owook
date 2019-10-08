@@ -1,4 +1,4 @@
-const mapping = {
+const OwOinio3oo3o7w7UvU9o9k = {
     "owo": "0",
     "OWO": "1",
     "owO": "2",
@@ -37,57 +37,57 @@ const mapping = {
     "xwx": "z",
 };
 
-function decode(text) {
-    let returnValue = ""
-    let words = text.split(" ");
-    for (word of words) {
-        word = word.replace("k", "");
-        let letters = word.match(/.{1,3}/g).filter(l => l != "");
+function decode(_0v0qwqxnx0v0k) {
+    let unuqwq0v00V0unuUvU0W0iniomo0V0qwqk = ""
+    let _0w0OnOunuouoUnUk = _0v0qwqxnx0v0k.split(" ");
+    for (_0w0OnOunuouok of _0w0OnOunuouoUnUk) {
+        _0w0OnOunuouok = _0w0OnOunuouok.replace("k", "");
+        let omoqwq0v00v0qwqunuUnUk = _0w0OnOunuouok.match(/.{1,3}/g).filter(l => l != "");
 
-        let answer = "";
-        for (letter of letters) {
-            if (mapping[letter]) {
-                answer += mapping[letter]
+        let iniUvUUnU0w0qwqunuk = "";
+        for (omoqwq0v00v0qwqunuk of omoqwq0v00v0qwqunuUnUk) {
+            if (OwOinio3oo3o7w7UvU9o9k[omoqwq0v00v0qwqunuk]) {
+                iniUvUUnU0w0qwqunuk += OwOinio3oo3o7w7UvU9o9k[omoqwq0v00v0qwqunuk]
             } else {
-                answer += "?"
+                iniUvUUnU0w0qwqunuk += "?"
             }
         }
-        returnValue += answer + " "
+        unuqwq0v00V0unuUvU0W0iniomo0V0qwqk += iniUvUUnU0w0qwqunuk + " "
     }
 
-    return returnValue
+    return unuqwq0v00V0unuUvU0W0iniomo0V0qwqk
 
 }
 
-function objectFlip(obj) {
-    const ret = {};
-    Object.keys(obj).forEach((key) => {
-        ret[obj[key]] = key;
+function objectFlip(OnO9w9xDDk) {
+    const unuqwq0v0k = {};
+    Object.keys(OnO9w9xDDk).forEach((x33qwqxvxk) => {
+        unuqwq0v0k[OnO9w9xDDk[x33qwqxvxk]] = x33qwqxvxk;
     });
-    return ret;
+    return unuqwq0v0k;
 }
 
-function encode(text) {
-    text = text.toLowerCase();
-    let returnValue = ""
-    let words = text.split(" ");
+function encode(_0v0qwqxnx0v0k) {
+    _0v0qwqxnx0v0k = _0v0qwqxnx0v0k.toLowerCase();
+    let unuqwq0v00V0unuUvU0W0iniomo0V0qwqk = ""
+    let _0w0OnOunuouoUnUk = _0v0qwqxnx0v0k.split(" ");
 
-    const reverseMapping = objectFlip(mapping);
+    const unuqwq0W0qwqunuUnUqwqOwOinio3oo3o7w7UvU9o9k = objectFlip(OwOinio3oo3o7w7UvU9o9k);
 
-    for (word of words) {
-        let letters = word.split("");
+    for (_0w0OnOunuouok of _0w0OnOunuouoUnUk) {
+        let omoqwq0v00v0qwqunuUnUk = _0w0OnOunuouok.split("");
 
-        let answer = "";
-        for (letter of letters) {
-            if (reverseMapping[letter]) {
-                answer += reverseMapping[letter]
+        let iniUvUUnU0w0qwqunuk = "";
+        for (omoqwq0v00v0qwqunuk of omoqwq0v00v0qwqunuUnUk) {
+            if (unuqwq0W0qwqunuUnUqwqOwOinio3oo3o7w7UvU9o9k[omoqwq0v00v0qwqunuk]) {
+                iniUvUUnU0w0qwqunuk += unuqwq0W0qwqunuUnUqwqOwOinio3oo3o7w7UvU9o9k[omoqwq0v00v0qwqunuk]
             } else {
-                answer += letter
+                iniUvUUnU0w0qwqunuk += omoqwq0v00v0qwqunuk
             }
         }
-        returnValue += answer + "k" + " "
+        unuqwq0v00V0unuUvU0W0iniomo0V0qwqk += iniUvUUnU0w0qwqunuk + "k" + " "
     }
-    return returnValue
+    return unuqwq0v00V0unuUvU0W0iniomo0V0qwqk
 }
 
 module.exports = { encode, decode, }
